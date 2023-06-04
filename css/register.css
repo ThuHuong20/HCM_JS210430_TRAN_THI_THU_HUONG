@@ -1,0 +1,118 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.register{
+    width: 200px;
+    margin-top: 150px;
+    margin-left: 450px;
+
+}
+.register a{
+    text-decoration: none;
+}
+hr {
+    width: 100px;
+    margin-top: 8px;
+    border: 1px solid;
+
+}
+
+
+.register input {
+    width: 500px;
+    height: 40px;
+    margin-top: 10px;
+    background-color: rgb(237, 237, 237);
+    border: none;
+    padding: 10px;
+}
+
+
+.register .buttonClick {
+    background-color: black;
+    color:aliceblue;
+    margin-top: 10px;
+    font-weight: bold;
+    height: 40px;
+    width: 500px;
+    font-size: 25px;
+    text-align: center;
+    cursor: pointer;
+
+}
+  .validate-email {
+      color: red;
+      display: none;
+  }
+
+  #snackbar {
+      visibility: hidden;
+      min-width: 300px;
+      margin-left: -130px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 2px;
+      padding: 16px;
+      position: fixed;
+      z-index: 1;
+      left: 50%;
+      top: 30px;
+      font-size: 17px;
+  }
+
+  #snackbar.show {
+      visibility: visible;
+      -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+      animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+  @-webkit-keyframes fadein {
+      from {
+         top: 0;
+          opacity: 0;
+      }
+
+      to {
+        top: 30px;
+          opacity: 1;
+      }
+  }
+
+  @keyframes fadein {
+      from {
+        top: 0;
+          opacity: 0;
+      }
+
+      to {
+        top: 30px;
+          opacity: 1;
+      }
+  }
+
+  @-webkit-keyframes fadeout {
+      from {
+        top: 30px;
+          opacity: 1;
+      }
+
+      to {
+        top: 0;
+          opacity: 0;
+      }
+  }
+
+  @keyframes fadeout {
+      from {
+        top: 30px;
+          opacity: 1;
+      }
+
+      to {
+        top: 0;
+          opacity: 0;
+      }
+  }

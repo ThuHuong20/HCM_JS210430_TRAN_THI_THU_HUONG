@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pandora</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container-one">
+        <div class="home-page"><a href="./index.html" onclick="home()">Trang chủ</a></div>
+        <div class="pandora-story"><a href="./aboutpandora.html" onclick="about()">Câu chuyện về Pandora</a></div>
+        <div class="logo-padora">
+            <img class="dt-width-auto" width="100%" height="35"
+                src="https://file.hstatic.net/200000103143/file/pandora_acf7bd54e6534a07be748b51c51c637c.svg"
+                alt="Pandora Việt Nam">
+        </div>
+        <div class="product">
+            <input id="searchProduct" oninput="searchProduct()" type="text" placeholder="Tìm kiếm sản phẩm...">
+            <span id="logout" onclick="checkLogout()" class="material-symbols-outlined">
+                logout
+            </span>
+            <span class="material-symbols-outlined" id="account" onclick="checkLogin()">
+                account_circle
+            </span>
+            <div class="total-count">
+                <span class="material-symbols-outlined" onclick="shoppingBag()">
+                    shopping_bag
+                </span>
+                <span id="totalCountProducts" class="total-products"></span>
+            </div>
+        </div>
+        <div class="seacrh-products">
+        </div>
+    </div>
+    <!-- banner và các mặt hàng -->
+    <div class="nagivation">
+        <div id="banner">
+            <img class="bannerImage" src="./image/slider2.webp" alt="">
+            <img class="bannerImage" src="./image/slider 3.webp" alt="">
+            <img class="bannerImage" src="./image/slider 4.jpg" alt="">
+            <div class="bannerText">
+                <h1 id="text"></h1>
+            </div>
+        </div>
+        <h3> Khám phá thế giới trang sức tuyệt mỹ</h3>
+        <div class="listproducts" id="listproducts">
+            <div class="product-item" onclick="catalogProduct('CHARM')">
+                <div class="product-item-img">
+                    <img src="./image/charm 15.webp" alt="">
+                </div>
+                <div class="item-name">
+                    <p>CHARM</p>
+                </div>
+            </div>
+            <div class="product-item" onclick="catalogProduct('BRACELE')">
+                <div class="product-item-img">
+                    <img src="./image/vòng tay 12.webp" alt="">
+                </div>
+                <div class="item-name">
+                    <p>VÒNG TAY</p>
+                </div>
+            </div>
+            <div class="product-item" onclick="catalogProduct('RING')">
+                <div class="product-item-img">
+                    <img src="./image/nhẫn 10.webp" alt="">
+                </div>
+                <div class="item-name">
+                    <p>NHẪN</p>
+                </div>
+            </div>
+            <div class="product-item" onclick="catalogProduct('EARDROP')">
+                <div class="product-item-img">
+                    <img src="./image/hoa tai 14.jpg" alt="">
+                </div>
+                <div class="item-name">
+                    <p>HOA TAI</p>
+                </div>
+            </div>
+            <div class="product-item" onclick="catalogProduct('NECKLACE')">
+                <div class="product-item-img">
+                    <img src="./image/dây chuyền 17.jpg" alt="">
+                </div>
+                <div class="item-name">
+                    <p>VÒNG CỔ</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- show chi tiết các sản phẩm -->
+    <div class="content-container">
+
+    </div>
+    <!-- BỘ SƯU TẬP -->
+    <div class="sellingProduct" onclick="showSeeMore()">
+        <h3>Bộ sưu tập</h3>
+        <div class="sellingProduct-container">
+            <div class="sellingProduct-one">
+                <img src="./image/bosuutap1.webp">
+                <p>Xem thêm</p>
+            </div>
+            <div class="sellingProduct-one">
+                <img src="./image/bosuutap4.webp">
+                <p>Xem thêm</p>
+            </div>
+            <div class="sellingProduct-one">
+                <img src="./image/bosuutap3.webp">
+                <p>Xem thêm</p>
+            </div>
+            <div class="sellingProduct-one">
+                <img src="./image/bosuutap2.webp">
+                <p>Xem thêm</p>
+            </div>
+        </div>
+    </div>
+    <!-- TRONG GIO HANG -->
+    <div class="cartProduct-all">
+        <div div class="cartProduct"></div>
+    </div>
+    <!-- chạy chữ trên màn hình -->
+    <div class="slideBar">
+        <div class="slideBar__content">
+            <div class="content__item default">
+                <span class="item--text"></span>
+            </div>
+            <div class="content__item next">
+                <span class="item--text"></span>
+            </div>
+            <div class="circle__groups">
+                <!-- <div class="circle"></div> -->
+            </div>
+            <div class="content__item block"></div>
+        </div>
+        <div class="borderOn"></div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-contact">
+            <div class="footer-contact-netword">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-square-instagram"></i>
+                <i class="fa-brands fa-pinterest"></i>
+            </div>
+            <div class="footer-contact-email">
+                <b>Nhận tin mới nhất từ Pandora</b>
+                <p>Đăng ký ngay để nhận thông tin mới về khuyến mãi, sự kiện, offer... nhất từ Pandora</p>
+                <input type="text" placeholder="Nhập email của bạn...">
+            </div>
+        </div>
+        <div class="footer-info">
+            <div class="footer-info-item">
+                <ul>
+                    <li>
+                        <h4>GIỚI THIỆU</h4>
+                    </li>
+                    <li>Về Pandora</li>
+                    <li>Câu chuyện Pandora</li>
+                    <li>Về Tập Đoàn Padora</li>
+                    <li>Liên hệ</li>
+                </ul>
+            </div>
+            <div class="footer-info-item">
+                <ul>
+                    <li>
+                        <h4>KHÁM PHÁ PANDORA</h4>
+                    </li>
+                    <li>Charm</li>
+                    <li>Vòng tay</li>
+                    <li>Hoa tai</li>
+                    <li>Dây chuyện</li>
+                    <li>Nhẫn</li>
+                    <li>Khuyến mãi</li>
+                    <li>Deal</li>
+                </ul>
+            </div>
+            <div class="footer-info-item">
+                <ul>
+                    <li>
+                        <h4>ĐIỀU KHOẢN & DỊCH VỤ</h4>
+                    </li>
+                    <li>Câu hỏi thường gặp</li>
+                    <li>Chính sách bảo mật</li>
+                    <li>Chính sách thanh toán</li>
+                    <li>Chính sách giao nhận</li>
+                    <li>Chính sách đổi hàng</li>
+                    <li>Cách thứ bảo quản</li>
+                </ul>
+            </div>
+            <div class="footer-info-item">
+                <ul>
+                    <li>
+                        <h4>HỆ THỐNG CỬA HÀNG</h4>
+                    </li>
+                    <li>Hồ Chí Minh</li>
+                    <li>Hà Nội</li>
+                    <li> Hệ thống Pandora toàn quốc </li>
+                </ul>
+            </div>
+            <div class="footer-info-item">
+                <ul>
+                    <li>
+                        <h4> GIAO HÀNG </h4>
+                    </li>
+                    <li>VNPost</li>
+                    <li>Nhất Tín Logistics</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="./js/index.js"> </script>
+</body>
+</html>
